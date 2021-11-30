@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>Playground</title>
+</head>
+
+<body>
+    <h1 class="d-inline-block mb-0 align-middle">Playground</h1>
+    <button class="btn btn-primary align-middle">Load Books</button>
+
+    <div class="container">
+        <div class="row"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script>
+        // const answer = (time) => {
+        //     alert("📞 Hello? " + time)
+        // }
+
+        // const callFriend = () => {
+        //     const randTime = Math.floor(Math.random() * 3000)
+
+        //     setTimeout(() => {
+        //         answer(randTime)
+        //     }, randTime)
+
+        //     console.log("phone is ringing...☎")
+        // }
+
+        // fetch("https://striveschool-api.herokuapp.com/books"
+        // , { method: "GET" }
+        // )
+        // .then(response => {
+        //     console.log(response)
+
+        //     if (response.ok) {
+        //         return response.json()
+        //     }
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     //ARRAY IN DATA
+        //     console.log(data)
+
+
+        // })
+        // .catch(err => console.error(err))
+
+        const loadBooks = () => {
+            fetch("https://striveschool-api.herokuapp.com/books")
+                .then(response => response.json())
+                .then(books => {
+
+                    //DOM MANIPULATION
+                    console.log(books)
+
+                    const row = document.querySelector(".row")
+
+                    for (let i = 0; i < books.length; i++) {
+                        const book = books[i]
+
+                        const col = document.createElement("div")
+                        col.className = "col-3"
+                        // col.addEventListener("click", () => alert("you clicked the element number " + (i + 1)))
+
+                        col.innerHTML = `
+                    <div class="card">
+                        <img src=${book.img} class="card-img-top" alt=${book.title} image>
+                        <div class="card-body">
+                            <h5 class="card-title">${book.title}</h5>
+                            <p class="card-text">${book.category}</p>
+                            <a href="#" class="btn btn-primary">${book.price}</a>
+                        </div>
+                    </div>
+                    `
+                        row.appendChild(col)
+                    }
+                })
+                .catch(err => console.log(err))
+                .finally(() => console.log("fetching done"))
+        }
+
+
+        window.onload = () => {
+            document.querySelector("button").addEventListener("click", loadBooks)
+
+            console.log("LAST CONSOLE LOG, but seen as first thing (synchronous)")
+        }
+    </script>
+</body>
+
+</html>

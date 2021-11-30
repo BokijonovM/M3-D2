@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <title>M3-D2</title>
+  </head>
+  <body>
+    <h1>EMINEM</h1>
+    <button class="btn btn-primary align-middle">LIST ALBUMS</button>
+
+    <div class="container">
+        <div class="row"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script>
+        const listAlbum = () => {
+            fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem")
+                .then(response => response.json())
+                .then(eminem => {
+                    // Dom Manipulation
+                    console.log(eminem)
+
+                    const row = document.querySelector(".row")
+                    for(let i = 0; i < eminem.length; i++){
+                        const eminem = eminem[i]
+
+                        const col = document.createElement("div")
+                        col.className = "col-3"
+                        col.innerHTML=`
+                        <div class="card">
+                        <img src=${eminem.img} class="card-img-top" alt=${eminem.title} image>
+                        <div class="card-body">
+                            <h5 class="card-title">${eminem.title}</h5>
+                            <p class="card-text">${eminem.title_short}</p>
+                            
+                        </div>
+                    </div>
+                        `
+                        row.appendChild(col)
+                    }
+
+
+                    
+            })
+            .catch(err => console.log(err))
+            .finally(() => console.log("fetching done"))
+        }
+
+
+        window.onload = () => {
+            document.querySelector("button").addEventListener("click", listAlbum)
+
+            console.log("LAST CONSOLE LOG, but seen as first thing (synchronous)")
+        }
+    </script>
+   
+  </body>
+</html>
