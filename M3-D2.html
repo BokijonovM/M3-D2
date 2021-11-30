@@ -11,7 +11,7 @@
     <title>M3-D2</title>
   </head>
   <body>
-    <h1>EMINEM</h1>
+    <h1>QUEEN</h1>
     <button class="btn btn-primary align-middle">LIST ALBUMS</button>
 
     <div class="container">
@@ -23,27 +23,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script>
         const listAlbum = () => {
-            fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem")
+            fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
                 .then(response => response.json())
-                .then(eminem => {
+                .then(queen => {
                     // Dom Manipulation
-                    console.log(eminem)
+                    console.log(queen.data)
 
                     const row = document.querySelector(".row")
-                    for(let i = 0; i < eminem.length; i++){
-                        const eminem = eminem[i]
+                    for(let i = 0; i < queen.length; i++){
+                        const queen = queen[i]
 
                         const col = document.createElement("div")
                         col.className = "col-3"
                         col.innerHTML=`
                         <div class="card">
-                        <img src=${eminem.img} class="card-img-top" alt=${eminem.title} image>
-                        <div class="card-body">
-                            <h5 class="card-title">${eminem.title}</h5>
-                            <p class="card-text">${eminem.title_short}</p>
-                            
+                            <img src=${queen.artist.picture-medium} class="card-img-top" alt=${queen.id} image>
+                            <div class="card-body">
+                                <h5 class="card-title">${queen.title}</h5>
+                                <p class="card-text">${queen.rank}</p>                            
+                            </div>
                         </div>
-                    </div>
                         `
                         row.appendChild(col)
                     }
