@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./albumpagedone.css">
+
+
+
+
+    <!-- Title and Fav Icon -->
+    <link rel="shortcut icon" type="image/jpg" href="https://strive.school/favicon.ico" />
+    <title>Album Page</title>
+
+</head>
+
+<body>
+    <div id="allContentWrapper" class="container-fluid d-flex p-0">
+        <nav id="nav-sideBar" class="d-flex flex-column mod-navBar">
+            <a class="d-flex ml-4 pb-3">
+                <div id="main-logo" class="d-flex">
+                    <svg viewBox="0 0 1134 340" class="spotify-logo--text" id="spotify-icon-id" style="cursor: pointer;" onclick="collapseSidebar()">
+                        <path fill="currentColor"
+                            d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z">
+                        </path>
+                    </svg>  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" onclick="openSidebar()" height="40" id="small-spotify-icon" style="display: none; cursor:pointer;" fill="white" class="bi bi-spotify ml-n2" viewBox="0 0 16 16">
+                      <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                    </svg>                  
+                </div>
+            </a>
+            <ul class="nav-menu d-flex flex-column mb-0 p-0" id="content-sidebar">
+
+
+
+                <li class="d-flex align-items-center w-100">
+                    <button type="button" class="d-flex align-items-center w-100 p-2">
+                        <div class="d-flex align-items-center justify-content-center p-0 mx-3">
+                            <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M 256.274 60.84 L 84.324 166.237 L 84.324 443.063 L 193.27 443.063 L 193.27 293.73 L 320.228 293.73 L 320.228 443.063 L 428.222 443.063 L 428.222 165.476 L 256.274 60.84 Z M 256.274 35.95 L 448.452 149.145 L 448.452 464.395 L 300 464.395 L 300 315.062 L 213.499 315.062 L 213.499 464.395 L 64.095 464.395 L 64.095 150.161 L 256.274 35.95 Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                            
+                        </div>
+                        <span id="sidebar-home-text">Home</span>
+                    </button>
+                </li>
+
+                <li class="d-flex align-items-center w-100">
+                    <button type="button" class="d-flex align-items-center w-100 p-2">
+                        <div class="d-flex align-items-center justify-content-center p-0 mx-3">
+                            <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508
+                                        36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476
+                                            14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905
+                                            38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224
+                                        377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 
+                                        21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor"
+                                    fill-rule="evenodd">
+                                </path>
+                            </svg>
+                        </div>
+                        <span id="sidebar-search-text">Search</span>
+                    </button>
+                </li>
+
+
+                <li class="d-flex align-items-center w-100">
+                    <button type="button" class="d-flex align-items-center w-100 p-2">
+                        <div class="d-flex align-items-center justify-content-center p-0 mx-3">
+                            <svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 
+                                     463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor">
+                                </path>
+                            </svg>
+                        </div>
+                        <span id="sidebar-library-text">Your Library</span>
+                    </button>
+                </li>
+
+            </ul>
+
+            <div class="sub-menu mt-4">
+                <ul class="nav-menu d-flex flex-column mb-0 p-0">
+                    <li class="d-flex align-items-center w-100">
+                        <button type="button" class="d-flex align-items-center w-100 p-2">
+                            <div class="square d-flex align-items-center justify-content-center p-0 mx-3">
+                                <svg role="img" height="12" width="12" viewBox="0 0 16 16">
+                                    <path d="M14 7H9V2H7v5H2v2h5v5h2V9h5z"></path>
+                                    <path fill="none" d="M0 0h16v16H0z"></path>
+                                </svg>
+                            </div>
+                            <span id="sidebar-playlist-text">Create Playlist</span>
+                        </button>
+                    </li>
+
+                    <li class="d-flex align-items-center w-100">
+                        <button type="button" class="d-flex align-items-center w-100 p-2">
+                            <div class="square d-flex align-items-center justify-content-center p-0 mx-3">
+                                <svg role="img" height="12" width="12" viewBox="0 0 16 16">
+                                    <path fill="none" d="M0 0h16v16H0z"></path>
+                                    <path
+                                        d="M13.797 2.727a4.057 4.057 0 00-5.488-.253.558.558 0 01-.31.112.531.531 0 01-.311-.112 4.054 4.054 0 00-5.487.253c-.77.77-1.194 1.794-1.194 2.883s.424 2.113 1.168 2.855l4.462 5.223a1.791 1.791 0 002.726 0l4.435-5.195a4.052 4.052 0 001.195-2.883 4.057 4.057 0 00-1.196-2.883z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span id="sidebar-liked-songs-text">Liked Songs</span>
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <hr>
+
+            <div id="savedAlbums" class="d-flex flex-column justify-content-between h-100">
+                <div class="d-flex position-relative flex-column">
+                    <div id="scrolling-menu" class="d-flex flex-column">
+                        <div class="scroll">
+                            <ul class="p-0">
+                                <li class="d-flex align-items-center justify-content-between pl-4">
+                                    <span id="music-sidebar-id">Music</span>
+                                    <span class="scrolling-svg">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-people-fill m-0 p-0" viewBox="0 0 16 16">
+                                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                        <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                                        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                                      </svg>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="download-app" class="d-flex align-items-center py-2 px-4 pb-5">
+                    <div class="icon">
+                        <svg role="img" height="24" width="24" viewBox="0 0 24 24">
+                            <path d="M11.5 0C5.149 0 0 5.148 0 11.5 0 17.851 5.149 23 11.5 23S23 17.851 23 
+                                11.5C23 5.148 17.851 0 11.5 0zm0 22C5.71 22 1 17.29 1 11.5S5.71 1 11.5 1
+                                22 5.71 22 11.5 17.29 22 11.5 22zm.499-6.842V5h-1v10.149l-3.418-3.975-.758.652
+                                    4.678 5.44 4.694-5.439-.757-.653-3.439 3.984z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="pl-2">
+                        <span id="sidebar-install-apps">Install App</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        
+        <main class="container-fluid p-0 m-0 mb-5 pb-5">
+            <header id="topBar" class="header row d-flex w-100 p-0 m-0">
+                
+                <div class="col-12 p-4 m-0 d-flex justify-content-between align-items-center">
+                    <div id="topBarReturn" class="d-flex justify-content-between align-items-center">
+                        <div id="pageControls">
+                            <a class="navbar-brand">
+                              <svg xmlns="http://www.w3.org/2000/svg" id="bi-left-icon" width="16" height="16" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+                            <a class="navbar-brand">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                              </svg>
+                              
+                        </div>
+                    </div>
+
+                    <div id="memberMenu" class="d-flex align-items-center">
+
+                        <div class="dropdown ml-3 d-flex align-items-center bg-dark">
+                            <figure id="avatarIMG" class="m-0 mr-2">
+                                <img aria-hidden="false" height="28" draggable="false" loading="eager"
+                                    src="./images/maher-zain.jpeg"
+                                    alt="Bokijonov">
+                            </figure>
+                            <button class="btn dropdown-toggle py-1" type="button" id="dropdownMenu2"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="name-after-logo">Strive School</span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-left m-0 p-0" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item d-flex justify-content-between" type="button">
+                                    Account
+                                    <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="ml-5 mr-2">
+                                        <path fill-rule="evenodd"
+                                            d="M15 7V1H9v1h4.29L7.11 8.18l.71.71L14 2.71V7h1zM1 15h12V9h-1v5H2V4h5V3H1v12z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <button class="dropdown-item" type="button">Profile</button>
+                                <button class="dropdown-item d-flex justify-content-between" type="button">
+                                    Upgrade to Premium
+                                    <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="ml-5 mr-2">
+                                        <path fill-rule="evenodd"
+                                            d="M15 7V1H9v1h4.29L7.11 8.18l.71.71L14 2.71V7h1zM1 15h12V9h-1v5H2V4h5V3H1v12z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <button class="dropdown-item" type="button">Log out</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <section id="middleMenu">
+                
+                <div class="col12 d-flex align-items-center p-4">
+                    <div class="image-name-back ">
+                        <div class="artist-name-container container">
+                          <div class="d-flex">
+                            <img class="image-artist-album mr-4"  src="./images/maher-zain.jpeg" width="200px" alt="">
+                          </div>
+                          <div class="d-flex">
+                            <h1 class="bar-artist-texts"><span class="artist-name" id="artist-name-id">Maher Zain</span> <span class="artist-name-span">349,292 monthly listeners</span></h1>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+            </section>
+
+
+          <section>
+                <div class="container icons-following mt-5 ml-4 d-flex">
+                  <div class="play-icon">
+                    <i class="bi bi-play-circle-fill"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                      </svg>
+                    <button type="button" class="btn follow-btn"><h5 class="m-0 follow-text" onclick="followFollowing()" id="follow-btn">FOLLOW</h5></button>     
+                    <i class="bi bi-three-dots"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-three-dots" viewBox="0 0 16 16">
+                      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                    </svg>       
+                </div>
+          </section>
+            <!--Music List (Table version)-->
+            
+          <section class="text-white">
+                <div class=" container table-album">
+                    <h1 class="mt-5 text-white" style="font-size: 30px; margin-left: 35px;">Popular</h1> 
+                    <table class="table table-borderless text-white">
+                      <thead>
+                        
+                      </thead>
+                      <tbody id="id-music-tabel">
+                        <tr class="table-row-container" id="trow-1" onmouseover="hideNumAddIcon()" onmouseout="hideIconAddNum()" onclick="footerMusicChange()">
+                          <th scope="row"><span class="p-0" id="number-1">1</span>
+                            <i class="bi bi-play"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" style="display: none;" class="bi bi-play" viewBox="0 0 16 16">
+                                <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                              </svg>
+                          <img class="ml-4 mr-4" id="artist-image-id" src="./images/maher-zain.jpeg" width="50px" alt="">
+                          <span id="music-name-1">Number One For Me</span>
+                        </th>
+                          <td class="listened-amount">3,145,245</td>                          
+                          <td class="music-time">
+                            <div class="heart-music-icon d-inline-block pr-5">
+                                <i class="bi bi-heart heard-music" ></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                </svg>
+                              </div>  
+                            4:10
+                            <div  class="three-dots-end d-inline-block">
+                              <i class="bi bi-three-dots"></i>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                              </svg>
+                            </div>
+                          </td>
+                            
+                        </tr>
+                        <tr class="table-row-container" id="trow-2" onmouseover="hideNumAddIcon1()" onmouseout="hideIconAddNum1()" onclick="footerMusicChange1()">
+                          <th scope="row"><span class="p-0" id="number-2">2</span>
+                            <i class="bi bi-play"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" style="display: none;" class="bi bi-play" viewBox="0 0 16 16">
+                                <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                              </svg>
+                          <img class="ml-4 mr-4" id="artist-image-id-1" src="./images/maher-zain.jpeg" width="50px" alt="">
+                          <span id="music-name-2">Forgive me</span>
+                        </th>
+                          <td class="listened-amount">5,195,299</td>                          
+                          <td class="music-time">
+                            <div class="heart-music-icon d-inline-block pr-5">
+                                <i class="bi bi-heart heard-music" ></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                </svg>
+                              </div>  
+                            4:10
+                            <div  class="three-dots-end d-inline-block">
+                              <i class="bi bi-three-dots"></i>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                              </svg>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="table-row-container" id="trow-3" onmouseover="hideNumAddIcon2()" onmouseout="hideIconAddNum2()" onclick="footerMusicChange2()">
+                          <th scope="row"><span class="p-0" id="number-3">3</span>
+                            <i class="bi bi-play"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" style="display: none;" class="bi bi-play" viewBox="0 0 16 16">
+                                <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                              </svg>
+                          <img class="ml-4 mr-4" id="artist-image-id-2" src="./images/maher-zain.jpeg" width="50px" alt="">
+                          <span id="music-name-3">For The Rest Of My Life</span>
+                        </th>
+                          <td class="listened-amount">9,145,245</td>                          
+                          <td class="music-time">
+                            <div class="heart-music-icon d-inline-block pr-5">
+                                <i class="bi bi-heart heard-music" ></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                </svg>
+                              </div>  
+                            4:47
+                            <div  class="three-dots-end d-inline-block">
+                              <i class="bi bi-three-dots"></i>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                              </svg>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="table-row-container" id="trow-4" onmouseover="hideNumAddIcon3()" onmouseout="hideIconAddNum3()" onclick="footerMusicChange3()">
+                          <th scope="row"><span class="p-0" id="number-4">4</span>
+                            <i class="bi bi-play"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" style="display: none;" class="bi bi-play" viewBox="0 0 16 16">
+                                <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                              </svg>
+                          <img class="ml-4 mr-4" id="artist-image-id-3" src="./images/zain-csrd.jpg" width="50px" alt="">
+                          <span id="music-name-4">Freedom</span>
+                        </th>
+                          <td class="listened-amount">10,145,245</td>                          
+                          <td class="music-time">
+                            <div class="heart-music-icon d-inline-block pr-5">
+                                <i class="bi bi-heart heard-music" ></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                </svg>
+                              </div>  
+                            4:10
+                            <div  class="three-dots-end d-inline-block">
+                              <i class="bi bi-three-dots"></i>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                              </svg>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="table-row-container" id="trow-5" onmouseover="hideNumAddIcon4()" onmouseout="hideIconAddNum4()" onclick="footerMusicChange4()">
+                          <th scope="row"><span class="p-0" id="number-5">5</span>
+                            <i class="bi bi-play"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" style="display: none;" class="bi bi-play" viewBox="0 0 16 16">
+                                <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                              </svg>
+                          <img class="ml-4 mr-4" id="artist-image-id-4" src="./images/zain-csrd.jpg" width="50px" alt="">
+                          <span id="music-name-5">So Soon</span>
+                        </th>
+                          <td class="listened-amount">3,000,245</td>                          
+                          <td class="music-time">
+                            <div class="heart-music-icon d-inline-block pr-5">
+                                <i class="bi bi-heart heard-music" ></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
+                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                </svg>
+                              </div>  
+                            4:10
+                            <div  class="three-dots-end d-inline-block">
+                              <i class="bi bi-three-dots"></i>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                              </svg>
+                            </div>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                      
+                    </table>
+                    <h5 id="show-less-more-text">Show more</h5>
+                  </div> 
+                  
+            </section>
+          
+            
+              <!--Popular releases-->
+              
+
+            <div class="container about text-white">
+              <h1 style="font-size: 30px; margin-left: 35px;">About</h1>
+          </div>
+            <section class="container col-md-10 col-lg-12">
+                <div class="about-container">
+                    <img class="about-image" src="./images/maher-zain.jpeg" width="200px" alt="">
+                    <h5 class="about-text">349,292 monthly listeners</h5>
+                    <p class="about-p">Maher Zain ( ماهر زين) is a Muslim Swedish R&B singer and songwriter, born 16 July 1981 in Tripoli, <br/>
+                        Lebanon. He released his debut album Thank You Allah, an internationally successful album with strong <br/>
+                        Muslim religious influences, in 2009. He released his follow-up album <br/>
+                        Forgive Me in 2012, and has released his third album entitled "One” in 2016.</p>
+                </div>
+          </section>
+            
+            
+        </main>
+        
+    </div>
+    
+        <footer class="footer" id="footer-music9">
+            <div class="row  text-white ">
+                <div class="col-1 d-flex align-items-center mr-0">
+                    
+                <!-- image -->
+                  
+                      <img
+                        class="self-align-start"
+                        height="70px"
+                        id="footer-image"
+                        src="https://images.unsplash.com/photo-1637561930888-dfedf87bf609?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80"
+                        alt=""
+                        srcset=""
+                      />
+                 
+                </div>
+                <div class="col-2 ml-4 footer-music-info-container">
+                    <!-- song details -->
+                  <p class="pt-4 pb-0 mb-0 mt-1" id="footer-music-name">Lorem ipsum dolor sit amet</p>
+                  <small class="pt-0" id="footer-artics-name">Artist</small>
+                </div>
+                <div class="col-1 d-flex justify-content-between align-items-center">
+                    <!-- love buttons -->
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M12.0122 5.57169L10.9252 4.48469C8.77734 2.33681 5.29493 2.33681 3.14705 4.48469C0.999162 6.63258 0.999162 10.115 3.14705 12.2629L11.9859 21.1017L11.9877 21.0999L12.014 21.1262L20.8528 12.2874C23.0007 10.1395 23.0007 6.65711 20.8528 4.50923C18.705 2.36134 15.2226 2.36134 13.0747 4.50923L12.0122 5.57169ZM11.9877 18.2715L16.9239 13.3352L18.3747 11.9342L18.3762 11.9356L19.4386 10.8732C20.8055 9.50635 20.8055 7.29028 19.4386 5.92344C18.0718 4.55661 15.8557 4.55661 14.4889 5.92344L12.0133 8.39904L12.006 8.3918L12.005 8.39287L9.51101 5.89891C8.14417 4.53207 5.92809 4.53207 4.56126 5.89891C3.19442 7.26574 3.19442 9.48182 4.56126 10.8487L7.10068 13.3881L7.10248 13.3863L11.9877 18.2715Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+            
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6ZM6 5H18C18.5523 5 19 5.44772 19 6V12.2676C18.7058 12.0974 18.3643 12 18 12H14C12.8954 12 12 12.8954 12 14V18C12 18.3643 12.0974 18.7058 12.2676 19H6C5.44772 19 5 18.5523 5 18V6C5 5.44772 5.44772 5 6 5Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+            
+                <!-- player -->
+                <div class="col ">
+                  
+            
+                 <div class="d-flex justify-content-around align-items-center mt-3">
+                   
+                       <!-- shuffle ico -->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g fill="currentColor">
+                              <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418c.49.552.865 1.102 1.126 1.532c.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z"/>
+                              <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z"/></g>
+                            </svg>
+                       
+            <!-- backward button -->
+                        <svg 
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21.0023 17H18.0023V7H21.0023V17Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M17.0023 12L10 17V7L17.0023 12Z"
+                            fill="currentColor"
+                          />
+                          <path d="M2 17L9.00232 12L2 7V17Z" fill="currentColor" />
+                        </svg>
+                     
+                      <!-- play button -->
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M16 12L10 16.3301V7.66987L16 12Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      <!-- forward button -->
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M21.0023 17H18.0023V7H21.0023V17Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M17.0023 12L10 17V7L17.0023 12Z"
+                            fill="currentColor"
+                          />
+                          <path d="M2 17L9.00232 12L2 7V17Z" fill="currentColor" />
+                        </svg>
+              
+              
+              <!-- repeat button -->
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M18.3701 7.99993L13.8701 10.598V8.99993H6.88989V12.9999H4.88989V6.99993H13.8701V5.40186L18.3701 7.99993Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M10.1299 16.9999H19.1101V10.9999H17.1101V14.9999H10.1299V13.4019L5.62988 15.9999L10.1299 18.598V16.9999Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      
+                 </div>
+            
+                    <!-- progress bar -->
+                    <div class="progress mt-3" style="height: 4px">
+                      <div
+                        class="progress-bar w-25"
+                        role="progressbar"
+                        aria-valuenow="20"
+                        aria-valuemin="0"
+                        aria-valuemax="20"                      
+                      ></div>
+            
+                       
+                    </div>
+                 
+                </div>
+            
+                <div class="col-3 d-flex justify-content-end align-items-center">
+                  
+            
+                  
+                      
+                       <div class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pc-display" viewBox="0 0 16 16"> -->
+                              <path d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V1Zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0ZM9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5ZM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5ZM1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2H1.5Z"/>
+                            </svg>
+                       </div>
+                      
+                
+                      
+                        <div class="mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+                              <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+                              <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+                              <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+                              <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                            </svg> 
+                        </div>
+                      
+                
+                      <div class="">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 12C24 16.4183 20.4183 20 16 20V18C19.3137 18 22 15.3137 22 12C22 8.68629 19.3137 6 16 6V4C20.4183 4 24 7.58172 24 12Z" fill="currentColor" />
+                            <path d="M20 12C20 14.2091 18.2091 16 16 16V14C17.1046 14 18 13.1046 18 12C18 10.8954 17.1046 10 16 10V8C18.2091 8 20 9.79086 20 12Z" fill="currentColor" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 16L15 20V4L9 8H5C2.79086 8 1 9.79086 1 12C1 14.2091 2.79086 16 5 16H9ZM5 10H9L13 7.5V16.5L9 14H5C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10Z" fill="currentColor" />
+                          </svg>
+                      </div>
+                  
+            
+                    
+                    
+                        </div>
+            
+            
+            <!-- volume -->
+                        <div class="col-1 ">
+            
+                            <div class="mt-5" style="height: 50px;">
+                                <div class="progress" style="height: 10px">
+                                    <div
+                                      class="progress-bar w-25"
+                                      role="progressbar"
+                                      aria-valuenow="20"
+                                      aria-valuemin="0"
+                                      aria-valuemax="20"
+                                    >
+                              </div>                                    
+                          </div>
+                            </div>
+                        </div>
+                  </div>               
+        </footer>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="./album.js"></script>
+   
+</body>
+
+</html>

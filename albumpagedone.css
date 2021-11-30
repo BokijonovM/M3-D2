@@ -1,0 +1,539 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;900&display=swap");
+:root {
+    --fadedWhite: hsla(0, 0%, 100%, 0.85);
+}
+
+body {
+    font-family: "Heebo", Arial, Helvetica, sans-serif;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 52px;
+    line-height: 56px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: .7px;
+    line-height: 28px;
+    color: white;
+}
+h5 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .8px;
+    line-height: 24px;
+    color: white;
+}
+p {
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 16px;
+    color: var(--fadedWhite);
+}
+
+#allContentWrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#allContentWrapper>main>section:last-child {
+    margin-bottom: calc(10vh + 24px)!important;
+}
+
+
+
+
+#nav-sideBar #main-logo {
+    color: white;
+    width: 128px;
+}
+
+#nav-sideBar button,
+#download-app {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 14px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    letter-spacing: 1px;
+    outline: 0;
+    opacity: 0.7;
+    transition: opacity 0.2s linear, background-color 0.2s linear;
+}
+
+#nav-sideBar button:hover,
+#nav-sideBar button:active,
+#scrolling-menu>div>ul>li:hover,
+#download-app:hover {
+    opacity: 1;
+}
+
+#scrolling-menu>div>ul>li {
+    opacity: 0.7;
+    transition: opacity 0.2s linear, background-color 0.2s linear;
+}
+
+#nav-sideBar button:active,
+#scrolling-menu>div>ul>li:active {
+    background-color: rgba(158, 158, 158, 0.308);
+}
+
+#scrolling-menu>div>ul {
+    font-size: 13px;
+    letter-spacing: 0.7px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+#nav-sideBar hr {
+    border-color: #363636;
+    width: 80%;
+}
+
+#nav-sideBar {
+    height: 90vh;
+    padding-top: 24px;
+    max-width: 232px;
+    min-width: 232px;
+    background-color: #000000;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+
+
+/* color and fill start */
+
+.nav-menu>li,
+.nav-menu>li>a,
+.mod-color-white,
+.mod-color-white,
+.scrolling-menu>div>p,
+#tracklist .table {
+    color: white;
+}
+
+.square.mod-BGC>svg,
+#download-app svg,
+.scrolling-svg>svg,
+#player-controls>.icon-target-area>svg,
+#topBar .dropdown-menu .dropdown-item>svg {
+    fill: white;
+}
+
+
+/* color and fill end */
+
+.square {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+}
+
+.square.mod-BGC {
+    background: linear-gradient(135deg, #ffffff, #c4efd9);
+    background-image: linear-gradient( 135deg, rgb(69, 10, 245), rgb(196, 239, 217));
+}
+
+#scrolling-menu {
+    width: 240px;
+    max-height: 91%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    max-height: -webkit-fill-available;
+}
+
+#savedAlbums>div:first-child {
+    height: -webkit-fill-available;
+}
+
+.scroll {
+    overflow: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    width: 96%;
+}
+
+.scroll>ul>li {
+    color: white;
+    list-style: none;
+    padding-right: 32px;
+}
+
+
+/* Top bar */
+
+#topBar {
+    top: 0px;
+    transition: background-color .4s ease;
+    height: 100px;
+    width: 100%;
+    z-index: 70;
+    bottom: 0;
+    left:0;
+    right:0;
+    position: fixed;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: transparent;
+}
+.gradientBG {
+    background-color: rgb(40,40,40)!important;
+    opacity: 0.8;
+    z-index: 95;
+    width: 100% !important;
+}
+
+#topBar>div {
+    position: sticky;
+    top: 0px;
+}
+
+
+.bi-chevron-left{
+    height: 30px;
+    background: rgb(66, 66, 66);
+    width: 30px;
+    border: 0px;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-left: 230px;
+}
+.bi-chevron-right{
+    height: 30px;
+    background: rgb(87, 87, 87);
+    width: 30px;
+    border: 0px;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-left: 10px;
+}
+.bi-chevron-right:hover, .bi-chevron-left:hover{
+    opacity: 1;
+}
+
+
+#topBar .dropdown {
+    background-color: black;
+    color: white;
+    padding-left: 4px;
+    border-radius: 24px;
+    border: none;
+}
+
+#topBar .dropdown>button {
+    color: white;
+    white-space: nowrap;
+    line-height: 28px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+#topBar .dropdown-menu {
+    transform: translate3d(-104px, 38px, 0px) !important;
+    background-color: #282828;
+    box-shadow: 0 16px 24px rgb(0 0 0 / 30%), 0 6px 8px rgb(0 0 0 / 20%);
+    max-width: 350px;
+    min-width: 160px;
+}
+ 
+
+#topBar .dropdown-menu .dropdown-item {
+    color: var(--fadedWhite);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    padding: 16px 8px 16px 16px;
+}
+
+#topBar .dropdown-menu .dropdown-item:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    color: #fff;
+}
+
+#topBar #avatarIMG {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#memberMenu .btn-upgrade {
+    background: #181818;
+    box-shadow: 9px 9px 16px rgb(0 0 0 / 40%), -9px -9px 16px rgb(73 73 73 / 60%);
+    border-radius: 20px;
+    color: var(--fadedWhite);
+    border-radius: 24px;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 18px;
+    padding: 8px 34px;
+    text-align: center;
+    text-transform: uppercase;
+    transform: scale(1);
+    transition: all 700ms cubic-bezier(.3, 0, 0, 1);
+}
+
+#memberMenu .btn-upgrade:hover {
+    color: white;
+    border-color: white;
+    transform: scale(1.05);
+}
+
+#memberMenu .btn-upgrade:active {
+    background: radial-gradient(38.2% 50% at 50% 50%, #2E3134 0%, #292B2E 100%);
+    border: 1px solid #272829;
+    box-shadow: inset 2px 2px 4px
+}
+
+
+#allContentWrapper {
+    background: rgb(24, 24, 24);
+    background: linear-gradient(0deg
+, rgba(24, 24, 24, 1) 60%, rgba(18, 18, 18, 0.9) 78%, rgb(133 132 99 / 80%) 93%, rgba(255, 179, 146, 0.6) 100%);
+}
+
+#memberMenu .btn-upgrade,
+#topBarReturn>button {
+    box-shadow: none;
+}
+h1 {
+    font-size: 74px;
+    line-height: 74px;
+    font-weight: 700;
+}
+ 
+/* Table */ 
+.image-artist-album{
+    border:0px;
+    border-radius: 50%;
+}
+.bar-artist-texts{
+    color: white;
+}
+
+.artist-name-span{
+    font-size: small;
+    display: block;
+    padding-left: 5px;
+}
+
+
+.artist-name{
+    font-size: 60px;
+    align-items: flex-end;
+}
+.artist-name-container{ 
+    display:flex;
+    align-items: flex-end;
+    justify-content:flex-start;
+    align-content: center;
+    width: 100%; 
+    margin-top: 100px;
+}
+
+
+/*icons*/
+.icons-following{
+    display:flex;
+    align-items: flex-start;
+    justify-content:flex-start
+}
+.follow-btn{
+    margin-left: 30px;
+}
+.bi-three-dots{
+    margin-left: 10px;
+}
+.bi-three-dots:hover{
+    cursor: pointer;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.4);
+}
+.follow-text{
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 20px;
+    opacity: 0.9;
+
+}
+.follow-text:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.1);
+    opacity: 1.0;
+    border: 1px solid white;
+}
+.bi-play-circle-fill{
+    fill: rgb(29, 185, 84);
+    opacity: 0.9;
+}
+.bi-play-circle-fill:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.1);
+    opacity: 1.0;
+    
+}
+
+.bi-heart:hover, .bi-play:hover{
+    fill: rgb(29, 185, 84);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.3);
+    animation: pulse 3s ease infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+/*table*/
+table{
+    width:100%;
+    table-layout: fixed;
+    overflow-wrap: break-word;
+}
+@media(max-width: 500){
+    table{
+      width: 100%;
+      table-layout: fixed;
+      overflow-wrap: break-word;
+    }
+  }
+
+#show-less-more-text{
+    cursor: pointer;
+    opacity: 0.7;
+    color: white;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+#show-less-more-text:hover{
+    opacity: 1;
+}
+.table-row-container{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    align-content:center;
+    cursor: pointer;
+    color:white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.about-container{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
+    border: 1px solid rgb(40, 40, 40);
+    border-radius:10px; 
+    margin-left: 18px;  
+    opacity: 0.8;
+}
+.about-container:hover{
+    opacity: 1;
+    background-color: rgb(50, 50, 50);
+    border-color: rgb(60, 60, 60);
+}
+.about-image{
+    border:0px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+.about-text, .about-p{
+    margin-left: 40px;
+}
+
+.footer{
+    height: 100px;
+    width: 100%;
+    z-index: 100;
+    bottom: 0;
+    left:0;
+    right:0;
+    position: fixed;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgb(24, 24, 24)
+}
+tr:hover {
+    background-color: rgb(40, 40, 40);
+    border: 1px solid rgb(45, 45, 45);
+    border-radius: 5px;
+    height: 60px;
+    border-color: rgb(55, 55, 55);
+  }
+th{
+    width: 100%;
+}
+.name-after-logo{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 20px;
+}
+
+small {
+    color: gray;
+  }
+  .progress-bar {
+    background-color: rgb(179, 179, 179);
+    border: 2px solid rgb(179, 179, 179);
+  }
+  .progress {
+    background-color: rgb(83, 83, 83);
+  }
+  
+
+.footer-music-name {
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.footer {
+    height: 100px;
+    width: 100%;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgb(24, 24, 24);
+}  
+.footer-music-info-container >p{
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.footer-music-info-container >small{
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
