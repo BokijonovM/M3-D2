@@ -1,3 +1,85 @@
+// Fetching data from API
+// M3-D2 
+const listAlbum = () => {
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
+        .then(response => response.json())
+        .then(queen => {
+            // Dom Manipulation
+            console.log(queen)
+            console.log(queen.data)
+
+
+            const row = document.querySelector(".row")
+            for (let i = 0; i < queen.data.length; i++) {
+                const SongName = queen.data[i]
+
+                const col = document.createElement("div")
+                col.classList.add(".tr")
+                col.className = "col-3"
+                col.innerHTML =
+                    `<tr class="table-row-container text-white" id="trow-1" onmouseover="hideNumAddIcon()" onmouseout="hideIconAddNum()" onclick="footerMusicChange()">
+                <th scope="row"><span class="p-0" id="number-1">1</span>
+                  <i class="bi bi-play"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" style="display: none;" class="bi bi-play" viewBox="0 0 16 16">
+                      <path d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                    </svg>
+                <img class="ml-4 mr-4" id="artist-image-id" src="${SongName.artist.picture_medium}" width="50px" alt="">
+                <span id="music-name-1" class="text-white">${SongName.title}</span>
+              </th>
+                <td class="listened-amount">${SongName.rank}</td>                          
+                <td class="music-time">
+                  <div class="heart-music-icon d-inline-block pr-5">
+                      <i class="bi bi-heart heard-music" ></i>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                      </svg>
+                    </div>  
+                  ${SongName.duration}
+                  <div  class="three-dots-end d-inline-block">
+                    <i class="bi bi-three-dots"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                    </svg>
+                  </div>
+                </td>
+                  
+              </tr>`
+
+                row.appendChild(col)
+            }
+
+
+
+        })
+        .catch(err => console.log(err))
+        .finally(() => console.log("fetching done"))
+}
+
+
+window.onload = () => {
+    document.getElementById("follow-btn").addEventListener("click", listAlbum)
+
+    console.log("LAST CONSOLE LOG, but seen as first thing (synchronous)")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Follow to Following
 function followFollowing() {
     let btn = document.getElementById("follow-btn")
