@@ -14,7 +14,7 @@ const listAlbum = () => {
                 const SongName = queen.data[i]
 
                 const col = document.createElement("div")
-                col.classList.add(".tr")
+                col.classList.add(".th")
                 col.className = "col-3"
                 col.innerHTML =
                     `<tr class="table-row-container text-white" id="trow-1" onmouseover="hideNumAddIcon()" onmouseout="hideIconAddNum()" onclick="footerMusicChange()">
